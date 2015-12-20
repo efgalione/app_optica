@@ -1,10 +1,103 @@
 <%= form_for(@recipe) do |f| %>
+
+  <%= f.label :glasses_distance_od_esf %>:
+  <%= f.text_field :glasses_distance_od_esf %><br />
+
+  <%= f.label :glasses_distance_od_cil %>:
+  <%= f.text_field :glasses_distance_od_cil %><br />
+
+  <%= f.label :glasses_distance_od_eje %>:
+  <%= f.text_field :glasses_distance_od_eje %><br />
+
+  <%= f.label :glasses_distance_od_prisma %>:
+  <%= f.text_field :glasses_distance_od_prisma %><br />
+
+  <%= f.label :glasses_distance_oi_esf %>:
+  <%= f.text_field :glasses_distance_oi_esf %><br />
+
+  <%= f.label :glasses_distance_oi_cil %>:
+  <%= f.text_field :glasses_distance_oi_cil %><br />
+
+  <%= f.label :glasses_distance_oi_eje %>:
+  <%= f.text_field :glasses_distance_oi_eje %><br />
+
+  <%= f.label :glasses_distance_oi_prisma %>:
+  <%= f.text_field :glasses_distance_oi_prisma %><br />
+
+  <%= f.label :glasses_near_od_esf %>:
+  <%= f.text_field :glasses_near_od_esf %><br />
+
+  <%= f.label :glasses_near_od_cil %>:
+  <%= f.text_field :glasses_near_od_cil %><br />
+
+  <%= f.label :glasses_near_od_eje %>:
+  <%= f.text_field :glasses_near_od_eje %><br />
+
+  <%= f.label :glasses_near_od_prisma %>:
+  <%= f.text_field :glasses_near_od_prisma %><br />
+
+  <%= f.label :glasses_near_oi_esf %>:
+  <%= f.text_field :glasses_near_oi_esf %><br />
+
+  <%= f.label :glasses_near_oi_cil %>:
+  <%= f.text_field :glasses_near_oi_cil %><br />
+
+  <%= f.label :glasses_near_oi_eje %>:
+  <%= f.text_field :glasses_near_oi_eje %><br />
+
+  <%= f.label :glasses_near_oi_prisma %>:
+  <%= f.text_field :glasses_near_oi_prisma %><br />
+
+  <%= f.label :obs %>:
+  <%= f.text_field :obs %><br />
+
+  <%= f.label :di %>:
+  <%= f.text_field :di %><br />
+
+  <%= f.label :cal %>:
+  <%= f.text_field :cal %><br />
+
+  <%= f.label :high_ring %>:
+  <%= f.text_field :high_ring %><br />
+
+  <%= f.label :high_multifocal %>:
+  <%= f.text_field :high_multifocal %><br />
+
+  <%= f.label :diagonal %>:
+  <%= f.text_field :diagonal %><br />
+
+  <%= f.label :bifocal %>:
+  <%= f.text_field :bifocal %><br />
+
+  <%= f.label :multifocal %>:
+  <%= f.text_field :multifocal %><br />
+
+  <%= f.label :organic %>:
+  <%= f.text_field :organic %><br />
+
+  <%= f.label :price %>:
+  <%= f.number_field :price %><br />
+
+  <%= f.label :cash_delivery %>:
+  <%= f.number_field :cash_delivery %><br />
+
+  <%= f.label :cash_balance %>:
+  <%= f.number_field :cash_balance %><br />
+
   <%= f.label :first_name %>:
   <%= f.text_field :first_name %><br />
 
   <%= f.label :last_name %>:
   <%= f.text_field :last_name %><br />
 
+  <%= f.label :phone %>:
+  <%= f.text_field :phone %><br />
+
+  <%= f.label :mail %>:
+  <%= f.email_field :mail %><br />
+
+  <%= f.label :birthday %>:
+  <%= f.date_field :birthday %><br />
 
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
