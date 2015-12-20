@@ -1,99 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Recetas</h1>
-
-<table>
+<div class="page-header">
+  <h1>Recetas</h1>
+</div>
+<table class="table table-over table-striped">
   <thead>
     <tr>
-      <th>Glasses Distance Od Esf</th>
-      <th>Glasses Distance Od Cil</th>
-      <th>Glasses Distance Od Eje</th>
-      <th>Glasses Distance Od Prisma</th>
-      <th>Glasses Distance Oi Esf</th>
-      <th>Glasses Distance Oi Cil</th>
-      <th>Glasses Distance Oi Eje</th>
-      <th>Glasses Distance Oi Prisma</th>
-      <th>Glasses Near Od Esf</th>
-      <th>Glasses Near Od Cil</th>
-      <th>Glasses Near Od Eje</th>
-      <th>Glasses Near Od Prisma</th>
-      <th>Glasses Near Oi Esf</th>
-      <th>Glasses Near Oi Cil</th>
-      <th>Glasses Near Oi Eje</th>
-      <th>Glasses Near Oi Prisma</th>
-      <th>Obs</th>
-      <th>Di</th>
-      <th>Pte</th>
-      <th>Cal</th>
-      <th>High Ring</th>
-      <th>High Multifocal</th>
-      <th>Diagonal</th>
-      <th>Bifocal</th>
-      <th>Multifocal</th>
-      <th>Organic</th>
-      <th>Price</th>
-      <th>Cash Delivery</th>
-      <th>Cash Balance</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Phone</th>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Precio</th>
+      <th>Seña</th>
+      <th>Saldo</th>
+      <th>Telefono</th>
       <th>Mail</th>
-      <th>Birthday</th>
-      <th>Created</th>
-      <th>Updated</th>
+      <th>Fecha Alta</th>
       <th></th>
-      <th colspan="3">Acciones</th>
     </tr>
   </thead>
-
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.glasses_distance_od_esf %></td>
-        <td><%= recipe.glasses_distance_od_cil %></td>
-        <td><%= recipe.glasses_distance_od_eje %></td>
-        <td><%= recipe.glasses_distance_od_prisma %></td>
-        <td><%= recipe.glasses_distance_oi_esf %></td>
-        <td><%= recipe.glasses_distance_oi_cil %></td>
-        <td><%= recipe.glasses_distance_oi_eje %></td>
-        <td><%= recipe.glasses_distance_oi_prisma %></td>
-        <td><%= recipe.glasses_near_od_esf %></td>
-        <td><%= recipe.glasses_near_od_cil %></td>
-        <td><%= recipe.glasses_near_od_eje %></td>
-        <td><%= recipe.glasses_near_od_prisma %></td>
-        <td><%= recipe.glasses_near_oi_esf %></td>
-        <td><%= recipe.glasses_near_oi_cil %></td>
-        <td><%= recipe.glasses_near_oi_eje %></td>
-        <td><%= recipe.glasses_near_oi_prisma %></td>
-        <td><%= recipe.obs %></td>
-        <td><%= recipe.di %></td>
-        <td><%= recipe.pte %></td>
-        <td><%= recipe.cal %></td>
-        <td><%= recipe.high_ring %></td>
-        <td><%= recipe.high_multifocal %></td>
-        <td><%= recipe.diagonal %></td>
-        <td><%= recipe.bifocal %></td>
-        <td><%= recipe.multifocal %></td>
-        <td><%= recipe.organic %></td>
+        <td><%= link_to recipe.id, recipe_path(recipe) %></td>
+        <td><%= recipe.first_name %></td>
+        <td><%= recipe.last_name %></td>
         <td><%= recipe.price %></td>
         <td><%= recipe.cash_delivery %></td>
         <td><%= recipe.cash_balance %></td>
-        <td><%= recipe.first_name %></td>
-        <td><%= recipe.last_name %></td>
         <td><%= recipe.phone %></td>
         <td><%= recipe.mail %></td>
-        <td><%= recipe.birthday %></td>
         <td><%= recipe.created_at %></td>
-        <td><%= recipe.updated_at %></td>
-        <td></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Editar',
+                      edit_recipe_path(recipe), :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'Eliminar',
+                      recipe_path(recipe),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= link_to 'Nueva Receta',
+            new_recipe_path,
+            :class => 'btn btn-primary' %>

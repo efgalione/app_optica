@@ -1,40 +1,85 @@
-<p id="notice"><%= notice %></p>
-<%= @recipe.created_at %>
-<%= @recipe.updated_at %>
-<%= @recipe.glasses_distance_od_esf %>
-<%= @recipe.glasses_distance_od_cil %>
-<%= @recipe.glasses_distance_od_eje %>
-<%= @recipe.glasses_distance_od_prisma %>
-<%= @recipe.glasses_distance_oi_esf %>
-<%= @recipe.glasses_distance_oi_cil %>
-<%= @recipe.glasses_distance_oi_eje %>
-<%= @recipe.glasses_distance_oi_prisma %>
-<%= @recipe.glasses_near_od_esf %>
-<%= @recipe.glasses_near_od_cil %>
-<%= @recipe.glasses_near_od_eje %>
-<%= @recipe.glasses_near_od_prisma %>
-<%= @recipe.glasses_near_oi_esf %>
-<%= @recipe.glasses_near_oi_cil %>
-<%= @recipe.glasses_near_oi_eje %>
-<%= @recipe.glasses_near_oi_prisma %>
-<%= @recipe.obs %>
-<%= @recipe.di %>
-<%= @recipe.pte %>
-<%= @recipe.cal %>
-<%= @recipe.high_ring %>
-<%= @recipe.high_multifocal %>
-<%= @recipe.diagonal %>
-<%= @recipe.bifocal %>
-<%= @recipe.multifocal %>
-<%= @recipe.organic %>
-<%= @recipe.price %>
-<%= @recipe.cash_delivery %>
-<%= @recipe.cash_balance %>
-<%= @recipe.first_name %>
-<%= @recipe.last_name %>
-<%= @recipe.phone %>
-<%= @recipe.mail %>
-<%= @recipe.birthday %>
-<br />
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%- model_class = Recipe -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_od_esf) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_od_esf %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_od_cil) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_od_cil %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_od_eje) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_od_eje %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_od_prisma) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_od_prisma %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_oi_esf) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_oi_esf %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_oi_cil) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_oi_cil %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_oi_eje) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_oi_eje %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_distance_oi_prisma) %>:</strong></dt>
+  <dd><%= @recipe.glasses_distance_oi_prisma %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_od_esf) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_od_esf %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_od_cil) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_od_cil %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_od_eje) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_od_eje %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_od_prisma) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_od_prisma %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_oi_esf) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_oi_esf %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_oi_cil) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_oi_cil %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_oi_eje) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_oi_eje %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:glasses_near_oi_prisma) %>:</strong></dt>
+  <dd><%= @recipe.glasses_near_oi_prisma %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:obs) %>:</strong></dt>
+  <dd><%= @recipe.obs %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:di) %>:</strong></dt>
+  <dd><%= @recipe.di %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pte) %>:</strong></dt>
+  <dd><%= @recipe.pte %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cal) %>:</strong></dt>
+  <dd><%= @recipe.cal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:high_ring) %>:</strong></dt>
+  <dd><%= @recipe.high_ring %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:high_multifocal) %>:</strong></dt>
+  <dd><%= @recipe.high_multifocal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:diagonal) %>:</strong></dt>
+  <dd><%= @recipe.diagonal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:bifocal) %>:</strong></dt>
+  <dd><%= @recipe.bifocal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:multifocal) %>:</strong></dt>
+  <dd><%= @recipe.multifocal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:organic) %>:</strong></dt>
+  <dd><%= @recipe.organic %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @recipe.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cash_delivery) %>:</strong></dt>
+  <dd><%= @recipe.cash_delivery %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cash_balance) %>:</strong></dt>
+  <dd><%= @recipe.cash_balance %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @recipe.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @recipe.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @recipe.phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mail) %>:</strong></dt>
+  <dd><%= @recipe.mail %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:birthday) %>:</strong></dt>
+  <dd><%= @recipe.birthday %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              recipes_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_recipe_path(@recipe), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              recipe_path(@recipe),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

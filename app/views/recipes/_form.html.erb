@@ -1,117 +1,262 @@
-<%= form_for(@recipe) do |f| %>
+<%= form_for @recipe, :html => { :class => "form-horizontal recipe" } do |f| %>
 
-  <%= f.label :glasses_distance_od_esf %>:
-  <%= f.text_field :glasses_distance_od_esf %><br />
-
-  <%= f.label :glasses_distance_od_cil %>:
-  <%= f.text_field :glasses_distance_od_cil %><br />
-
-  <%= f.label :glasses_distance_od_eje %>:
-  <%= f.text_field :glasses_distance_od_eje %><br />
-
-  <%= f.label :glasses_distance_od_prisma %>:
-  <%= f.text_field :glasses_distance_od_prisma %><br />
-
-  <%= f.label :glasses_distance_oi_esf %>:
-  <%= f.text_field :glasses_distance_oi_esf %><br />
-
-  <%= f.label :glasses_distance_oi_cil %>:
-  <%= f.text_field :glasses_distance_oi_cil %><br />
-
-  <%= f.label :glasses_distance_oi_eje %>:
-  <%= f.text_field :glasses_distance_oi_eje %><br />
-
-  <%= f.label :glasses_distance_oi_prisma %>:
-  <%= f.text_field :glasses_distance_oi_prisma %><br />
-
-  <%= f.label :glasses_near_od_esf %>:
-  <%= f.text_field :glasses_near_od_esf %><br />
-
-  <%= f.label :glasses_near_od_cil %>:
-  <%= f.text_field :glasses_near_od_cil %><br />
-
-  <%= f.label :glasses_near_od_eje %>:
-  <%= f.text_field :glasses_near_od_eje %><br />
-
-  <%= f.label :glasses_near_od_prisma %>:
-  <%= f.text_field :glasses_near_od_prisma %><br />
-
-  <%= f.label :glasses_near_oi_esf %>:
-  <%= f.text_field :glasses_near_oi_esf %><br />
-
-  <%= f.label :glasses_near_oi_cil %>:
-  <%= f.text_field :glasses_near_oi_cil %><br />
-
-  <%= f.label :glasses_near_oi_eje %>:
-  <%= f.text_field :glasses_near_oi_eje %><br />
-
-  <%= f.label :glasses_near_oi_prisma %>:
-  <%= f.text_field :glasses_near_oi_prisma %><br />
-
-  <%= f.label :obs %>:
-  <%= f.text_field :obs %><br />
-
-  <%= f.label :di %>:
-  <%= f.text_field :di %><br />
-
-  <%= f.label :cal %>:
-  <%= f.text_field :cal %><br />
-
-  <%= f.label :high_ring %>:
-  <%= f.text_field :high_ring %><br />
-
-  <%= f.label :high_multifocal %>:
-  <%= f.text_field :high_multifocal %><br />
-
-  <%= f.label :diagonal %>:
-  <%= f.text_field :diagonal %><br />
-
-  <%= f.label :bifocal %>:
-  <%= f.text_field :bifocal %><br />
-
-  <%= f.label :multifocal %>:
-  <%= f.text_field :multifocal %><br />
-
-  <%= f.label :organic %>:
-  <%= f.text_field :organic %><br />
-
-  <%= f.label :price %>:
-  <%= f.number_field :price %><br />
-
-  <%= f.label :cash_delivery %>:
-  <%= f.number_field :cash_delivery %><br />
-
-  <%= f.label :cash_balance %>:
-  <%= f.number_field :cash_balance %><br />
-
-  <%= f.label :first_name %>:
-  <%= f.text_field :first_name %><br />
-
-  <%= f.label :last_name %>:
-  <%= f.text_field :last_name %><br />
-
-  <%= f.label :phone %>:
-  <%= f.text_field :phone %><br />
-
-  <%= f.label :mail %>:
-  <%= f.email_field :mail %><br />
-
-  <%= f.label :birthday %>:
-  <%= f.date_field :birthday %><br />
-
-  <% if @recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
-      <ul>
-      <% @recipe.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @recipe.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @recipe.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="actions">
-  <%= f.submit %>
+  <div class="control-group">
+    <%= f.label :glasses_distance_od_esf, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_od_esf, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_od_esf]) %>
   </div>
+  <div class="control-group">
+    <%= f.label :glasses_distance_od_cil, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_od_cil, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_od_cil]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_distance_od_eje, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_od_eje, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_od_eje]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_distance_od_prisma, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_od_prisma, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_od_prisma]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_distance_oi_esf, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_oi_esf, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_oi_esf]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_distance_oi_cil, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_oi_cil, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_oi_cil]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_distance_oi_eje, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_oi_eje, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_oi_eje]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_distance_oi_prisma, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_distance_oi_prisma, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_distance_oi_prisma]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_od_esf, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_od_esf, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_od_esf]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_od_cil, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_od_cil, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_od_cil]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_od_eje, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_od_eje, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_od_eje]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_od_prisma, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_od_prisma, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_od_prisma]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_oi_esf, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_oi_esf, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_oi_esf]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_oi_cil, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_oi_cil, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_oi_cil]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_oi_eje, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_oi_eje, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_oi_eje]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :glasses_near_oi_prisma, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :glasses_near_oi_prisma, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:glasses_near_oi_prisma]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :obs, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :obs, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:obs]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :di, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :di, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:di]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :pte, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :pte, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:pte]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :cal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cal, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:cal]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :high_ring, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :high_ring, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:high_ring]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :high_multifocal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :high_multifocal, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:high_multifocal]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :diagonal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :diagonal, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:diagonal]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :bifocal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bifocal, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:bifocal]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :multifocal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :multifocal, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:multifocal]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :organic, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :organic, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:organic]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:price]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :cash_delivery, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cash_delivery, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:cash_delivery]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :cash_balance, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cash_balance, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:cash_balance]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:first_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:last_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:phone]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :mail, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mail, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:mail]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :birthday, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :birthday, :class => 'form-control' %>
+    </div>
+    <%= error_span(@recipe[:birthday]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            recipes_path, :class => 'btn btn-default' %>
+
 <% end %>
